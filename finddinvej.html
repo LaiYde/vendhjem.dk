@@ -83,20 +83,42 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 24px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--color-text);
-            font-size: 15px;
-            font-weight: 400;
-            transition: color 0.3s ease;
+            color: var(--color-text-soft, #5A6B60);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
-            color: var(--color-accent);
+            color: var(--color-green, #3E524F);
+        }
+
+        .nav-links a.active {
+            color: var(--color-green, #3E524F);
+            font-weight: 600;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #3E524F;
+            margin: 6px 0;
         }
 
         .nav-cta {
@@ -444,6 +466,16 @@
             color: var(--color-text-soft);
         }
 
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+        }
+
         @media (max-width: 900px) {
             main {
                 padding: 40px 16px;
@@ -465,7 +497,25 @@
             }
 
             .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .nav-links {
                 display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
             }
         }
     </style>
@@ -478,7 +528,7 @@
         <div class="logo">
             <span class="logo-vend">Vend</span><span class="logo-hjem">Hjem</span>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html#om">Om Lai</a></li>
             <li><a href="index.html#ydelser">Ydelser</a></li>
             <li><a href="index.html#metode">Metode</a></li>
@@ -487,6 +537,9 @@
             <li><a href="index.html#videoer">Videoer</a></li>
             <li><a href="faellesskab.html" class="nav-cta">Bliv en del</a></li>
         </ul>
+        <button class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </nav>
 
