@@ -7,7 +7,7 @@
     <meta name="description" content="Ken Wilbers Integral Teori er fundamentet for Lai Ydes arbejde med lederudvikling, coaching og personlig transformation. Lær om AQAL-modellen og de fire kvadranter.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-bg: #F4F5EF;
@@ -19,12 +19,12 @@
             --color-accent-light: #D5DDD4;
             --color-dark: #2C3530;
             --color-white: #FFFFFF;
-            --font-heading: 'DM Serif Display', Georgia, serif;
-            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-heading: 'Lora', Georgia, serif;
+            --font-body: 'Nunito', -apple-system, sans-serif;
             --max-width: 1140px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        /* html scroll-behavior handled by Lenis */
         body { font-family: var(--font-body); color: var(--color-text); background: var(--color-bg); line-height: 1.7; font-size: 17px; font-weight: 300; -webkit-font-smoothing: antialiased; }
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
@@ -146,8 +146,55 @@
         @media (max-width: 600px) {
             .elements-grid { grid-template-columns: 1fr; }
         }
+
+        /* ---- Design System v2: Scroll Reveal ---- */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        [data-reveal].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Splitting.js hero animation */
+        [data-splitting] .char {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        [data-splitting].visible .char {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            [data-reveal], .stagger-item, [data-splitting] .char {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            html { scroll-behavior: auto; }
+        }
     </style>
-</head>
+
+    <!-- Design System v2: Lenis + GSAP + Splitting + CountUp -->
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css">
+    </head>
 <body>
 
 <nav>
@@ -167,7 +214,7 @@
 </nav>
 
 <!-- PAGE HERO -->
-<section class="page-hero">
+<section class="page-hero" data-reveal>
     <div class="container">
         <span class="section-label">Fundamentet</span>
         <h1>Integral Teori — <em>kortet over alt</em></h1>
@@ -176,14 +223,14 @@
 </section>
 
 <!-- INTRO -->
-<section class="content-section warm">
+<section class="content-section warm" data-reveal>
     <div class="container">
         <div class="big-quote">"Ingen er klog nok til at tage fejl 100% af tiden. Enhver tilgang rummer en <em>delvis sandhed</em> — opgaven er at finde den ramme, der kan rumme dem alle."<br><span style="font-family:var(--font-body);font-size:0.85rem;color:var(--color-text-soft);font-style:normal;">— Ken Wilber</span></div>
     </div>
 </section>
 
 <!-- HVAD ER INTEGRAL TEORI -->
-<section class="content-section">
+<section class="content-section" data-reveal>
     <div class="container">
         <span class="section-label">Baggrund</span>
         <h2>Hvad er Integral Teori?</h2>
@@ -194,7 +241,7 @@
 </section>
 
 <!-- AQAL - 5 ELEMENTER -->
-<section class="content-section warm">
+<section class="content-section warm" data-reveal>
     <div class="container">
         <span class="section-label">AQAL-modellen</span>
         <h2>De fem elementer</h2>
@@ -231,7 +278,7 @@
 </section>
 
 <!-- DE FIRE KVADRANTER -->
-<section class="content-section">
+<section class="content-section" data-reveal>
     <div class="container">
         <span class="section-label">Kernemodellen</span>
         <h2>De fire kvadranter</h2>
@@ -265,7 +312,7 @@
 </section>
 
 <!-- NIVEAUER / SPIRAL DYNAMICS -->
-<section class="content-section warm">
+<section class="content-section warm" data-reveal>
     <div class="container">
         <span class="section-label">Udviklingsniveauer</span>
         <h2>Bevidsthedens niveauer</h2>
@@ -319,7 +366,7 @@
 </section>
 
 <!-- LINJER, TILSTANDE, TYPER -->
-<section class="content-section dark">
+<section class="content-section dark" data-reveal>
     <div class="container">
         <span class="section-label">De øvrige dimensioner</span>
         <h2>Linjer, tilstande og typer</h2>
@@ -349,7 +396,7 @@
 </section>
 
 <!-- LAI + INTEGRAL -->
-<section class="content-section">
+<section class="content-section" data-reveal>
     <div class="container">
         <span class="section-label">Forbindelsen</span>
         <h2>Hvorfor Integral Teori er central for Lai Ydes arbejde</h2>
@@ -373,7 +420,7 @@
 </section>
 
 <!-- NØGLEBØGER -->
-<section class="content-section warm">
+<section class="content-section warm" data-reveal>
     <div class="container">
         <span class="section-label">Læs videre</span>
         <h2>Ken Wilbers vigtigste bøger</h2>
@@ -400,7 +447,7 @@
 </section>
 
 <!-- CTA -->
-<section class="content-section">
+<section class="content-section" data-reveal>
     <div class="container">
         <div class="cta-box">
             <h2>Oplev Integral Teori i praksis</h2>
@@ -416,5 +463,69 @@
     </div>
 </footer>
 
+<!-- Design System v2: Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+<script>
+    // === Design System v2 Init ===
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // 1. Lenis smooth scroll + GSAP sync
+    let lenis;
+    if (!prefersReducedMotion) {
+        lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+    }
+
+    // 2. IntersectionObserver scroll-reveal
+    if (!prefersReducedMotion) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const items = entry.target.querySelectorAll('.stagger-item');
+                    items.forEach((item, i) => {
+                        setTimeout(() => item.classList.add('visible'), i * 100);
+                    });
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+    } else {
+        document.querySelectorAll('[data-reveal], .stagger-item').forEach(el => {
+            el.classList.add('visible');
+        });
+    }
+
+    // 3. Nav scroll effect
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('nav');
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // 4. Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+                if (lenis) {
+                    lenis.scrollTo(target, { offset: -76 });
+                } else {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                const navLinks = document.getElementById('navLinks');
+                if (navLinks) navLinks.classList.remove('open');
+            }
+        });
+    });
+</script>
 </body>
 </html>

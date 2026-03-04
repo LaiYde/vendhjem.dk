@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================
@@ -31,14 +31,14 @@
             --color-dark: #2C3530;
             --color-white: #FFFFFF;
             --color-cream: #FDFFF4;
-            --font-heading: 'DM Serif Display', Georgia, serif;
-            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-heading: 'Lora', Georgia, serif;
+            --font-body: 'Nunito', -apple-system, sans-serif;
             --max-width: 1200px;
             --section-padding: 120px 0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        /* html scroll-behavior handled by Lenis */
 
         body {
             font-family: var(--font-body);
@@ -976,8 +976,55 @@
             .mobile-toggle { display: block; }
             .cta-box { padding: 60px 32px; }
         }
+
+        /* ---- Design System v2: Scroll Reveal ---- */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        [data-reveal].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Splitting.js hero animation */
+        [data-splitting] .char {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        [data-splitting].visible .char {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            [data-reveal], .stagger-item, [data-splitting] .char {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            html { scroll-behavior: auto; }
+        }
     </style>
-</head>
+
+    <!-- Design System v2: Lenis + GSAP + Splitting + CountUp -->
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css">
+    </head>
 <body>
 
 <!-- ============ NAV ============ -->
@@ -1008,7 +1055,7 @@
     <div class="hero-overlay"></div>
     <div class="container">
         <span class="hero-label">Foredrag &middot; Lederudvikling &middot; Integral Coaching</span>
-        <h1>Find vejen hjem til dit <em>autentiske</em> lederskab</h1>
+        <h1 data-splitting>Find vejen hjem til dit <em>autentiske</em> lederskab</h1>
         <p>25 års erfaring som skuespiller og erhvervskonsulent. Jeg hjælper ledere med at kommunikere med nærvær, mod og autenticitet.</p>
         <div class="hero-buttons">
             <a href="#kontakt" class="btn-primary">Book en uforpligtende samtale</a>
@@ -1022,7 +1069,7 @@
 </section>
 
 <!-- ============ SOCIAL PROOF ============ -->
-<section class="social-proof">
+<section class="social-proof" data-reveal>
     <div class="container">
         <span class="social-proof-text">Har arbejdet med</span>
         <div class="social-proof-logos">
@@ -1036,7 +1083,7 @@
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section class="about" id="om">
+<section class="about" data-reveal id="om">
     <div class="container">
         <div class="about-image">
             <img src="lai-yde.jpg" alt="Lai Yde på scenen" loading="lazy">
@@ -1066,7 +1113,7 @@
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section class="services" id="ydelser">
+<section class="services" data-reveal id="ydelser">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Ydelser</span>
@@ -1074,19 +1121,19 @@
             <p>Jeg tilpasser altid forløbet til jeres virkelighed. Her er mine tre kerneydelser.</p>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card stagger-item">
                 <div class="service-icon">&#127908;</div>
                 <h3>Foredrag</h3>
                 <p>Inspirerende, underholdende og vedkommende foredrag om lederskab, kommunikation og autenticitet. Med levende eksempler fra scenen og erhvervslivet.</p>
                 <a href="#kontakt" class="service-link">Hør mere &rarr;</a>
             </div>
-            <div class="service-card">
+            <div class="service-card stagger-item">
                 <div class="service-icon">&#127917;</div>
                 <h3>Lederudvikling med skuespillere</h3>
                 <p>Træn de svære samtaler med professionelle skuespillere i trygge rammer. Øv feedback, konflikthåndtering og nærvær i realistiske scenarier.</p>
                 <a href="#kontakt" class="service-link">Hør mere &rarr;</a>
             </div>
-            <div class="service-card">
+            <div class="service-card stagger-item">
                 <div class="service-icon">&#129309;</div>
                 <h3>Teamudvikling</h3>
                 <p>Styrk samarbejdet og den psykologiske tryghed i dit team. Vi arbejder med sociale og emotionelle kompetencer gennem praktiske øvelser.</p>
@@ -1097,7 +1144,7 @@
 </section>
 
 <!-- ============ METHOD ============ -->
-<section class="method" id="metode">
+<section class="method" data-reveal id="metode">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Metoden</span>
@@ -1105,17 +1152,17 @@
             <p>Siden 2002 har jeg udviklet en metode der bruger scenekunstens teknikker til at træne lederskab i praksis.</p>
         </div>
         <div class="method-grid">
-            <div class="method-step">
+            <div class="method-step stagger-item">
                 <div class="method-number">01</div>
                 <h3>Afdækning</h3>
                 <p>Vi kortlægger jeres udfordringer og skaber scenarier der afspejler jeres hverdag — ingen abstrakte øvelser.</p>
             </div>
-            <div class="method-step">
+            <div class="method-step stagger-item">
                 <div class="method-number">02</div>
                 <h3>Træning</h3>
                 <p>Med professionelle skuespillere øver I de svære situationer i et trygt rum, hvor det er OK at fejle og prøve igen.</p>
             </div>
-            <div class="method-step">
+            <div class="method-step stagger-item">
                 <div class="method-number">03</div>
                 <h3>Forankring</h3>
                 <p>Vi omsætter oplevelserne til konkrete handlinger I kan tage med hjem og bruge allerede næste dag.</p>
@@ -1125,20 +1172,20 @@
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section class="testimonials" id="referencer">
+<section class="testimonials" data-reveal id="referencer">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Det siger andre</span>
             <h2>Referencer</h2>
         </div>
         <div class="testimonial-grid">
-            <div class="testimonial-card">
+            <div class="testimonial-card stagger-item">
                 <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                 <p class="testimonial-text">"Lai formåede at skabe et rum hvor selv de mest tillukkede ledere turde åbne op. Det var en øjenåbner for hele vores ledergruppe."</p>
                 <div class="testimonial-author">[Navn — Placeholder]</div>
                 <div class="testimonial-role">[Titel, Virksomhed]</div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card stagger-item">
                 <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                 <p class="testimonial-text">"Jeg har aldrig oplevet lederudvikling der var så praktisk og vedkommende. Det var som om Lai kunne se ting i mig, jeg ikke selv var klar over."</p>
                 <div class="testimonial-author">[Navn — Placeholder]</div>
@@ -1149,7 +1196,7 @@
 </section>
 
 <!-- ============ VIDEO ============ -->
-<section class="video-section" id="videoer">
+<section class="video-section" data-reveal id="videoer">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Se Lai i aktion</span>
@@ -1172,7 +1219,7 @@
 </section>
 
 <!-- ============ PODCAST ============ -->
-<section class="podcast" id="podcast">
+<section class="podcast" data-reveal id="podcast">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Podcast</span>
@@ -1244,7 +1291,7 @@
 </section>
 
 <!-- ============ MANDEFÆLLESSKAB ============ -->
-<section class="maend" id="maend">
+<section class="maend" data-reveal id="maend">
     <div class="container">
         <div class="maend-content">
             <div class="maend-text">
@@ -1295,7 +1342,7 @@
 </section>
 
 <!-- ============ EXPLORE / PREVIEW ============ -->
-<section class="explore" id="udforsk">
+<section class="explore" data-reveal id="udforsk">
     <div class="container">
         <div class="section-header">
             <span class="section-label">Udforsk</span>
@@ -1303,19 +1350,19 @@
             <p>Bliv inspireret, find din vej og tag et øjeblik for dig selv.</p>
         </div>
         <div class="explore-grid">
-            <div class="explore-card">
+            <div class="explore-card stagger-item">
                 <div class="explore-icon green">&#9998;</div>
                 <h3>Blog</h3>
                 <p>Artikler om Integral Teori, lederskab og det at vende hjem til sig selv. Skrevet med den samme varme og ærlighed du møder i Lai's foredrag.</p>
                 <a href="blog.html" class="explore-link">Læs artikler &rarr;</a>
             </div>
-            <div class="explore-card">
+            <div class="explore-card stagger-item">
                 <div class="explore-icon amber">&#127760;</div>
                 <h3>Find din vej</h3>
                 <p>Ikke sikker på, hvad der passer til dig? Svar på 5 spørgsmål og få en personlig anbefaling — foredrag, coaching, BuddhiCamp eller mandefællesskab.</p>
                 <a href="finddinvej.html" class="explore-link">Tag guiden &rarr;</a>
             </div>
-            <div class="explore-card">
+            <div class="explore-card stagger-item">
                 <div class="explore-icon warm">&#127807;</div>
                 <h3>Daglig Refleksion</h3>
                 <p>30 refleksioner — én for hver dag. Et øjeblik til at stoppe op, mærke efter og stille dig selv et enkelt spørgsmål. Ny refleksion hver dag.</p>
@@ -1327,7 +1374,7 @@
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="cta-section" id="kontakt">
+<section class="cta-section" data-reveal id="kontakt">
     <div class="container">
         <div class="cta-box">
             <h2>Klar til at vende hjem?</h2>
@@ -1376,22 +1423,91 @@
     </div>
 </footer>
 
-<!-- ============ JS ============ -->
+<!-- Design System v2: Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js"></script>
+
 <script>
-    // Nav scroll effect
+    // === Design System v2 Init ===
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // 1. Lenis smooth scroll + GSAP sync
+    let lenis;
+    if (!prefersReducedMotion) {
+        lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+    }
+
+    // 2. Splitting.js
+    if (typeof Splitting !== 'undefined') { Splitting(); }
+
+    // 3. IntersectionObserver scroll-reveal
+    if (!prefersReducedMotion) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Stagger children
+                    const items = entry.target.querySelectorAll('.stagger-item');
+                    items.forEach((item, i) => {
+                        setTimeout(() => item.classList.add('visible'), i * 100);
+                    });
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+        // Splitting hero reveal
+        const heroSplit = document.querySelector('[data-splitting]');
+        if (heroSplit) {
+            setTimeout(() => heroSplit.classList.add('visible'), 300);
+        }
+    } else {
+        // Ensure everything visible if reduced motion
+        document.querySelectorAll('[data-reveal], .stagger-item, [data-splitting]').forEach(el => {
+            el.classList.add('visible');
+        });
+    }
+
+    // 4. GSAP parallax for hero background
+    if (!prefersReducedMotion && typeof gsap !== 'undefined') {
+        const heroBg = document.querySelector('.hero-bg img');
+        if (heroBg) {
+            gsap.to(heroBg, {
+                scrollTrigger: { trigger: '.hero', scrub: 1 },
+                y: 80,
+                ease: 'none'
+            });
+        }
+        ScrollTrigger.refresh();
+    }
+
+    // 5. Nav scroll effect
     window.addEventListener('scroll', () => {
-        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+        const nav = document.getElementById('nav');
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
     });
 
-    // Smooth scroll for anchor links
+    // 6. Smooth scroll for anchor links (Lenis handles this, fallback for non-Lenis)
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
             e.preventDefault();
             const target = document.querySelector(a.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // Close mobile menu if open
-                document.getElementById('navLinks').classList.remove('open');
+                if (lenis) {
+                    lenis.scrollTo(target, { offset: -76 });
+                } else {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                const navLinks = document.getElementById('navLinks');
+                if (navLinks) navLinks.classList.remove('open');
             }
         });
     });
