@@ -79,8 +79,9 @@
 
         /* FIVE ELEMENTS */
         .elements-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin: 48px 0; }
-        .element-card { background: var(--color-white); border-radius: 16px; padding: 32px 20px; text-align: center; border: 1px solid rgba(44,37,32,0.06); transition: transform 0.2s; }
+        .element-card { background: var(--color-white); border-radius: 16px; padding: 32px 20px; text-align: center; border: 1px solid rgba(44,37,32,0.06); transition: transform 0.2s; text-decoration: none; color: var(--color-text); display: block; cursor: pointer; }
         .element-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+        .element-card .element-cta { display: inline-block; margin-top: 12px; font-size: 0.78rem; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em; }
         .element-icon { font-size: 2rem; margin-bottom: 16px; }
         .element-card h3 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; }
         .element-card p { font-size: 0.82rem; color: var(--color-text-soft); margin-bottom: 0; max-width: 100%; }
@@ -248,31 +249,36 @@
         <p>AQAL er akronymet for de fem grundelementer i Integral Teori. Tilsammen danner de et kort, der kan bruges til at navigere i alt fra personlig udvikling til organisatorisk transformation.</p>
 
         <div class="elements-grid">
-            <div class="element-card">
+            <a href="integral-kvadranter.html" class="element-card">
                 <div class="element-icon">◻️</div>
                 <h3>Kvadranter</h3>
                 <p>Fire fundamentale perspektiver: indre/ydre, individuel/kollektiv</p>
-            </div>
-            <div class="element-card">
+                <span class="element-cta">Læs artikel + øvelser →</span>
+            </a>
+            <a href="integral-niveauer.html" class="element-card">
                 <div class="element-icon">📊</div>
                 <h3>Niveauer</h3>
                 <p>Udviklingstrin fra arkaisk til integral bevidsthed</p>
-            </div>
-            <div class="element-card">
+                <span class="element-cta">Læs artikel + øvelser →</span>
+            </a>
+            <a href="integral-linjer.html" class="element-card">
                 <div class="element-icon">🧵</div>
                 <h3>Linjer</h3>
                 <p>Forskellige intelligenser der udvikler sig uafhængigt</p>
-            </div>
-            <div class="element-card">
+                <span class="element-cta">Læs artikel + øvelser →</span>
+            </a>
+            <a href="integral-tilstande.html" class="element-card">
                 <div class="element-icon">🌊</div>
                 <h3>Tilstande</h3>
                 <p>Midlertidige bevidsthedstilstande (vågne, drøm, flow)</p>
-            </div>
-            <div class="element-card">
+                <span class="element-cta">Læs artikel + øvelser →</span>
+            </a>
+            <a href="integral-typer.html" class="element-card">
                 <div class="element-icon">🔷</div>
                 <h3>Typer</h3>
                 <p>Personligheds- og stilmønstre (maskulin/feminin, MBTI osv.)</p>
-            </div>
+                <span class="element-cta">Læs artikel + øvelser →</span>
+            </a>
         </div>
     </div>
 </section>
