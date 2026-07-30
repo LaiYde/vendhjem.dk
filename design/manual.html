@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VendHjem · Designmanual v1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --gran:#16383B; --gran-dyb:#0E2628; --birk:#F4F6F4; --birk-varm:#EDF0ED;
@@ -31,7 +31,7 @@
   th{background:var(--birk-varm);text-align:left;padding:9px 14px;font-weight:600;color:var(--gran);font-size:.8rem}
   td{padding:9px 14px;border-top:1px solid #E7ECEA;vertical-align:top}
   .hex{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:#5c6b67}
-  .dot{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:8px;vertical-align:-2px;border:1px solid rgba(0,0,0,.08)}
+  .d-gran{background:#16383B}.d-birk{background:#F4F6F4}.d-lygte{background:#D9942B}.d-soe{background:#537C7E}.d-ro{background:#4F7A5A}.d-vagt{background:#A6532F}.d-blaek{background:#22302E}.dot{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:8px;vertical-align:-2px;border:1px solid rgba(0,0,0,.08)}
   .princip{background:#fff;border:1px solid #DDE4E1;border-left:4px solid var(--lygte);border-radius:10px;padding:16px 20px;margin:10px 0}
   .princip .fp{font-family:'Source Serif 4',serif;font-style:italic;font-size:1.08rem;color:var(--gran-dyb)}
   .princip .fordi{font-size:.84rem;color:#5c6b67;margin-top:4px}
@@ -49,6 +49,7 @@
   .serif{font-family:'Source Serif 4',serif;font-style:italic}
   .tag{display:inline-block;background:var(--birk-varm);border-radius:999px;padding:2px 10px;font-size:.72rem;font-weight:600;color:var(--soe);margin-left:8px;vertical-align:2px}
   .evid{font-size:.78rem;color:#778782;margin-top:6px}
+.note-lille{font-size:.86rem;color:#5c6b67}.fodnote{margin-top:30px;font-size:.8rem;color:#778782}
 </style>
 </head>
 <body>
@@ -69,34 +70,28 @@
 
   <h2><span class="nr">02</span>Farver</h2>
   <div class="h2sub">Lys = handling er systemets eneste dramatiske virkemiddel. Ét lyspunkt pr. skærm.</div>
-  <table>
-    <tr><th>Token</th><th>Værdi</th><th>Rolle</th><th>Kontrast-regel</th></tr>
-    <tr><td><span class="dot" style="background:#16383B"></span><b>gran</b></td><td class="hex">#16383B</td><td>Systemets stemme: flader, primærknapper, overskrifter</td><td>Mod birk: 10,9:1 ✓</td></tr>
-    <tr><td><span class="dot" style="background:#F4F6F4"></span><b>birk</b></td><td class="hex">#F4F6F4</td><td>Baggrund. Aldrig ren hvid (#FFF kun i kort/paneler)</td><td>—</td></tr>
-    <tr><td><span class="dot" style="background:#D9942B"></span><b>lygte</b></td><td class="hex">#D9942B</td><td>KUN fokus, aktivt valg, primær handling. Aldrig pynt, aldrig brødtekst</td><td>Som glød/kant — ikke som tekst på lys bund (3,1:1)</td></tr>
-    <tr><td><span class="dot" style="background:#537C7E"></span><b>sø</b></td><td class="hex">#537C7E</td><td>Sekundært: links, metadata, rolige ikoner</td><td>Mod birk: 4,6:1 ✓</td></tr>
-    <tr><td><span class="dot" style="background:#4F7A5A"></span><b>ro</b></td><td class="hex">#4F7A5A</td><td>Bekræftelse — uden fanfare</td><td>4,7:1 ✓</td></tr>
-    <tr><td><span class="dot" style="background:#A6532F"></span><b>vagt</b></td><td class="hex">#A6532F</td><td>Advarsel — jordfarvet. Alarmrød findes ikke i systemet</td><td>5,5:1 ✓</td></tr>
-    <tr><td><span class="dot" style="background:#22302E"></span><b>blæk</b></td><td class="hex">#22302E</td><td>Brødtekst. Ren sort findes ikke i systemet</td><td>12,6:1 ✓</td></tr>
-  </table>
+  <table><tbody><tr><th>Token</th><th>Værdi</th><th>Rolle</th><th>Kontrast-regel</th></tr>
+    <tr><td><span class="dot d-gran"></span><b>gran</b></td><td class="hex">#16383B</td><td>Systemets stemme: flader, primærknapper, overskrifter</td><td>Mod birk: 10,9:1 ✓</td></tr>
+    <tr><td><span class="dot d-birk"></span><b>birk</b></td><td class="hex">#F4F6F4</td><td>Baggrund. Aldrig ren hvid (#FFF kun i kort/paneler)</td><td>—</td></tr>
+    <tr><td><span class="dot d-lygte"></span><b>lygte</b></td><td class="hex">#D9942B</td><td>KUN fokus, aktivt valg, primær handling. Aldrig pynt, aldrig brødtekst</td><td>Som glød/kant — ikke som tekst på lys bund (3,1:1)</td></tr>
+    <tr><td><span class="dot d-soe"></span><b>sø</b></td><td class="hex">#537C7E</td><td>Sekundært: links, metadata, rolige ikoner</td><td>Mod birk: 4,6:1 ✓</td></tr>
+    <tr><td><span class="dot d-ro"></span><b>ro</b></td><td class="hex">#4F7A5A</td><td>Bekræftelse — uden fanfare</td><td>4,7:1 ✓</td></tr>
+    <tr><td><span class="dot d-vagt"></span><b>vagt</b></td><td class="hex">#A6532F</td><td>Advarsel — jordfarvet. Alarmrød findes ikke i systemet</td><td>5,5:1 ✓</td></tr>
+    <tr><td><span class="dot d-blaek"></span><b>blæk</b></td><td class="hex">#22302E</td><td>Brødtekst. Ren sort findes ikke i systemet</td><td>12,6:1 ✓</td></tr></tbody></table>
 
   <h2><span class="nr">03</span>Typografi — to stemmer, tre roller</h2>
-  <table>
-    <tr><th>Rolle</th><th>Skrift</th><th>Regel</th></tr>
+  <table><tbody><tr><th>Rolle</th><th>Skrift</th><th>Regel</th></tr>
     <tr><td><b>Systemets stemme</b></td><td>Schibsted Grotesk 400–700</td><td>Al UI, overskrifter, knapper. Aldrig vægte under 400.</td></tr>
     <tr><td><b>Menneskets ord</b> <span class="tag">ufravigelig</span></td><td class="serif">Source Serif 4, kursiv</td><td>Alt mennesket har valgt eller sagt — altid ordret, altid citeret (»…«), aldrig omskrevet. Bruges ALDRIG til systemtekst.</td></tr>
-    <tr><td><b>Sporet</b></td><td class="mono">IBM Plex Mono</td><td>Evidens-pointere, versioner, tidsstempler, revisionsspor. Dokumentation, ikke samtale.</td></tr>
-  </table>
-  <p style="font-size:.86rem;color:#5c6b67">Skala: 12 / 14 / 16 (basis) / 20 / 24 / 32 / 42. Linjehøjde 1,55 i brød, 1,2 i display. Maks. 68 tegn pr. linje i læsetekst.</p>
+    <tr><td><b>Sporet</b></td><td class="mono">IBM Plex Mono</td><td>Evidens-pointere, versioner, tidsstempler, revisionsspor. Dokumentation, ikke samtale.</td></tr></tbody></table>
+  <p class="note-lille">Skala: 12 / 14 / 16 (basis) / 20 / 24 / 32 / 42. Linjehøjde 1,55 i brød, 1,2 i display. Maks. 68 tegn pr. linje i læsetekst.</p>
 
   <h2><span class="nr">04</span>Tid &amp; bevægelse <span class="tag">ny i v1</span></h2>
   <div class="h2sub">To flader, to tempi — samme lov (én beslutning ad gangen), modsat dosering.</div>
-  <table>
-    <tr><th>Flade</th><th>Token</th><th>Regel</th><th>Hvorfor</th></tr>
+  <table><tbody><tr><th>Flade</th><th>Token</th><th>Regel</th><th>Hvorfor</th></tr>
     <tr><td><b>E2 · medarbejder</b></td><td class="mono">motion-ro: 400–600 ms ease-out</td><td>Rolige overgange mellem skridt; indhold glider, springer aldrig. Ingen spinnere — rolig fade.</td><td>Ro er temporal (Headspace: langsommere end app-standard)</td></tr>
     <tr><td><b>E7 · konsulent</b></td><td class="mono">motion-flow: &lt; 100 ms</td><td>Alle kø-handlinger svarer øjeblikkeligt (optimistisk UI); næste sag er prefetchet — aldrig spinner efter en beslutning.</td><td>Flow i timevis kræver svar under perceptionstærsklen (Superhuman/Buchheit)</td></tr>
-    <tr><td>Begge</td><td class="mono">prefers-reduced-motion</td><td>Respekteres altid: overgange erstattes af øjeblikkelig, rolig visning.</td><td>WCAG-gulv</td></tr>
-  </table>
+    <tr><td>Begge</td><td class="mono">prefers-reduced-motion</td><td>Respekteres altid: overgange erstattes af øjeblikkelig, rolig visning.</td><td>WCAG-gulv</td></tr></tbody></table>
 
   <h2><span class="nr">05</span>Kernekomponenter</h2>
   <div class="to-col">
@@ -175,7 +170,7 @@
     </ul>
   </div>
 
-  <p style="margin-top:30px;font-size:.8rem;color:#778782">v1 · S542 · bygget på UX-BENCHMARK-RAPPORT-S542 (21 kilder). Ved Stevens ratificering landes manualen som normativt artefakt i repoet (docs/design/) via PR med to-parts-review. Navnet (afventer Lais verdikt) farver alene logo/navnetræk — intet i denne manual afhænger af det.</p>
+  <p class="fodnote">v1 · S542 · bygget på UX-BENCHMARK-RAPPORT-S542 (21 kilder). Ved Stevens ratificering landes manualen som normativt artefakt i repoet (docs/design/) via PR med to-parts-review. Navnet (afventer Lais verdikt) farver alene logo/navnetræk — intet i denne manual afhænger af det.</p>
 </div>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VendHjem — Den værdige adskillelse</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --gran:#16383B; --gran-dyb:#0E2628; --birk:#F4F6F4; --birk-varm:#EDF0ED;
@@ -81,6 +81,7 @@
   footer .f-sub{margin-bottom:24px;max-width:520px}
   .f-cta{background:var(--lygte);color:var(--gran-dyb);border:none;border-radius:9px;padding:14px 30px;font-weight:700;font-family:inherit;font-size:1rem;cursor:pointer}
   .f-note{font-size:.78rem;color:#8FA39E;margin-top:34px}
+@media(max-width:480px){.cta-rk{flex-wrap:wrap}.bevis{padding:28px 20px}.hero h1{font-size:1.9rem}.wrap{padding:0 20px}}
 </style>
 </head>
 <body>
@@ -88,15 +89,15 @@
 <div class="wrap">
   <nav>
     <div class="logo">Vend<span class="lys">Hjem</span></div>
-    <button class="nav-cta">Book en samtale</button>
+    <button type="button" class="nav-cta">Book en samtale</button>
   </nav>
 
   <section class="hero">
     <h1>Værdighed kan ikke stå i en pressemeddelelse.<br><em>Den skal kunne bevises.</em></h1>
     <p class="sub">VendHjem er platformen for den værdige adskillelse: jeres opsagte medarbejdere bliver fulgt hjem til det rigtige næste arbejdsliv — og I får dokumentation for, at omsorgen blev modtaget. Ikke bare stillet til rådighed.</p>
     <div class="cta-rk">
-      <button class="cta">Book en samtale</button>
-      <button class="cta2">Se hvordan det virker</button>
+      <button type="button" class="cta">Book en samtale</button>
+      <button type="button" class="cta2">Se hvordan det virker</button>
     </div>
   </section>
 
@@ -150,7 +151,7 @@
   <div class="wrap">
     <h2>Skal jeres næste farvel være jeres bedste?</h2>
     <p class="f-sub">Tag en samtale med os om, hvordan den værdige adskillelse ser ud i jeres organisation — og hvad den beviser udadtil.</p>
-    <button class="f-cta">Book en samtale</button>
+    <button type="button" class="f-cta">Book en samtale</button>
     <div class="f-note">VendHjem · Den værdige adskillelse · Bygget i Danmark · Data i EU · [Tekst er udkast — Lais pen lægger den endelige stemme]</div>
   </div>
 </footer>

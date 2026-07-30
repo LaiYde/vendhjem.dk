@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VendHjem · E7 Konsulentbord — fyrtårnsskærm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --gran:#16383B; --gran-dyb:#0E2628; --birk:#F4F6F4; --birk-varm:#EDF0ED;
@@ -95,6 +95,8 @@
   .taster{margin-top:auto;padding-top:16px;border-top:1px dashed #DDE4E1;font-size:11px;color:#778782;display:flex;flex-wrap:wrap;gap:8px 14px}
   .taster b{font-family:'IBM Plex Mono',monospace;background:var(--birk-varm);border:1px solid #DDE4E1;border-radius:4px;padding:1px 6px;color:var(--gran);font-weight:500}
   .hegn{font-size:11px;color:#778782;background:var(--birk);border-radius:8px;padding:10px 12px;margin-top:12px}
+.rev-titel{font-size:.9rem;font-weight:600;color:var(--gran)}.mt22{margin-top:22px}.evi-id{font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:10px}.fw4{font-weight:400}
+.m1note{font-size:10px;color:#778782}
 </style>
 </head>
 <body>
@@ -110,7 +112,7 @@
 <div class="app">
 
   <!-- KØEN -->
-  <aside class="koe">
+  <aside class="koe" aria-label="Din kø">
     <div class="koe-head">
       <h2>Din kø</h2>
       <div class="tal">4 til gennemsyn · 2 venter på svar · 1 vendt tilbage</div>
@@ -198,7 +200,7 @@
           <div class="kilde">negativt fragment · signal_event · ordinal 1 · v3 · ordret som valgt</div>
         </div>
         <div class="evi">
-          <div class="citat">Valgte kortet »Tidlige morgener — jeg arbejder bedst, når dagen er ny« <span style="font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:10px">(kort-id 12 · v1)</span></div>
+          <div class="citat">Valgte kortet »Tidlige morgener — jeg arbejder bedst, når dagen er ny« <span class="evi-id">(kort-id 12 · v1)</span></div>
           <div class="kilde">signal_event · ordinal 1 · samme forløb · peger på versioneret kort</div>
         </div>
       </div>
@@ -206,18 +208,18 @@
   </main>
 
   <!-- BESLUTNING -->
-  <aside class="beslut">
+  <aside class="beslut" aria-label="Beslutning">
     <h2>Beslutning</h2>
     <div class="b-note">Godkend kræver din attestation — hvert punkt er en aktiv handling. Intet er sat på forhånd.</div>
 
-    <div class="att valgt"><div class="boks">✓</div><div>Jeg har læst hele profilen, før jeg så udkastet <span class="mono" style="font-size:10px;color:#778782">(M1 · låst rækkefølge)</span></div></div>
+    <div class="att valgt"><div class="boks">✓</div><div>Jeg har læst hele profilen, før jeg så udkastet <span class="mono m1note">(M1 · låst rækkefølge)</span></div></div>
     <div class="att valgt"><div class="boks">✓</div><div>Min blinde vurdering er afgivet — og afveg på ét punkt › vis</div></div>
     <div class="att"><div class="boks"></div><div>Hvert udsagn i udkastet kan følges til sin evidens</div></div>
     <div class="att"><div class="boks"></div><div>Intet i udkastet siger mere, end mennesket selv har valgt</div></div>
 
-    <button class="btn b-god">Godkend og attestér <span class="mono" style="font-weight:400">G</span></button>
-    <button class="btn b-afvis">Afvis — kræver kategori og begrundelse <span class="mono" style="font-weight:400">A</span></button>
-    <button class="btn b-udskyd">Udskyd — vender tilbage i køen <span class="mono" style="font-weight:400">U</span></button>
+    <button type="button" class="btn b-god">Godkend og attestér <span class="mono fw4">G</span></button>
+    <button type="button" class="btn b-afvis">Afvis — kræver kategori og begrundelse <span class="mono fw4">A</span></button>
+    <button type="button" class="btn b-udskyd">Udskyd — vender tilbage i køen <span class="mono fw4">U</span></button>
 
     <div class="hegn">Medarbejderen ser først indholdet, når status er <b>leveret</b> — håndhævet i databasen, ikke i fladen (K9).</div>
 
