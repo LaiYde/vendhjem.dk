@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin">
-    <title>Vend Hjem — Lai Yde | Foredrag & Lederudvikling</title>
+    <title>Vend Hjem — Lai Yde | Foredrag &amp; Lederudvikling</title>
     <meta name="description" content="Lai Yde hjælper ledere og teams med at finde deres autentiske stemme gennem skuespilteknikker, foredrag og coaching. Uddannet skuespiller, erhvervskonsulent og foredragsholder.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
 
     <style>
         /* ============================================
@@ -964,7 +964,7 @@
             color: rgba(253,255,244,0.5);
             font-size: 0.88rem;
         }
-        .footer-col h4 {
+        .footer-col h3 {
             font-weight: 600;
             font-size: 0.82rem;
             text-transform: uppercase;
@@ -1081,7 +1081,8 @@
         /* FE6 */ @view-transition { navigation: auto; } ::view-transition-old(root) { animation: vt-fade-out 0.25s ease; } ::view-transition-new(root) { animation: vt-fade-in 0.25s ease; } @keyframes vt-fade-out { to { opacity: 0; } } @keyframes vt-fade-in { from { opacity: 0; } }
         /* FE3 */ @property --grad-angle { syntax: '<angle>'; initial-value: 135deg; inherits: false; } @keyframes gradient-shift { 0% { --grad-angle: 135deg; } 50% { --grad-angle: 225deg; } 100% { --grad-angle: 135deg; } } @media (prefers-reduced-motion: no-preference) { .btn-primary.gradient-animated { animation: gradient-shift 6s ease-in-out infinite; background: linear-gradient(var(--grad-angle), var(--color-green), #2A3B38, var(--color-green-light)); background-size: 200% 200%; } }
         /* FE4 */ .nav-logo-svg { display: none; } .nav-logo.has-svg .nav-logo-text { display: none; } .nav-logo.has-svg .nav-logo-svg { display: block; } .nav-logo-svg text { font-family: 'Lora', Georgia, serif; font-size: 24px; letter-spacing: -0.02em; } .nav-logo-svg .logo-vend { fill: var(--color-green); stroke: var(--color-green); } .nav-logo-svg .logo-hjem { fill: var(--color-accent); stroke: var(--color-accent); } .nav-logo-svg text { stroke-width: 0.7; fill-opacity: 0; stroke-dasharray: 300; stroke-dashoffset: 300; } @media (prefers-reduced-motion: no-preference) { .nav-logo-svg text { animation: logo-draw 2s ease forwards, logo-fill 0.6s ease 1.8s forwards; } } @media (prefers-reduced-motion: reduce) { .nav-logo-svg text { stroke-dashoffset: 0; fill-opacity: 1; stroke-width: 0; } } @keyframes logo-draw { to { stroke-dashoffset: 0; } } @keyframes logo-fill { to { fill-opacity: 1; stroke-width: 0; } }
-    </style>
+    .footer-bottom a{text-decoration:underline;text-underline-offset:2px;color:#9fb8b3}
+</style>
 
     <!-- Design System v2: GSAP + Splitting + CountUp -->
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
@@ -1113,7 +1114,7 @@
 <!-- ============ NAV ============ -->
 <nav id="nav">
     <div class="container">
-        <a href="index.html" class="nav-logo has-svg"><span class="nav-logo-text">Vend<span>Hjem</span></span><svg class="nav-logo-svg" viewBox="0 0 155 30" width="155" height="30" xmlns="http://www.w3.org/2000/svg" aria-label="VendHjem"><text y="24"><tspan class="logo-vend">Vend</tspan><tspan class="logo-hjem">Hjem</tspan></text></svg></a>
+        <a href="index.html" class="nav-logo has-svg"><span class="nav-logo-text">Vend<span>Hjem</span></span><svg class="nav-logo-svg" viewBox="0 0 155 30" width="155" height="30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VendHjem"><text y="24"><tspan class="logo-vend">Vend</tspan><tspan class="logo-hjem">Hjem</tspan></text></svg></a>
         <div class="nav-links" id="navLinks">
             <a href="#om">Om Lai</a>
             <a href="#ydelser">Ydelser</a>
@@ -1124,7 +1125,7 @@
             <a href="finddinvej.html">Find din vej</a>
             <a href="faellesskab.html" class="nav-cta">Bliv en del</a>
         </div>
-        <button class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <button type="button" class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
             <span></span><span></span><span></span>
         </button>
     </div>
@@ -1133,6 +1134,7 @@
 <!-- ============ HERO — Video background with image fallback ============ -->
 <section class="hero">
     <div class="hero-bg">
+        <!-- [html-validate-disable-next no-autoplay: bevidst hero-baggrund, muted] -->
         <video autoplay muted loop playsinline poster="images/hero-poster.jpg">
             <source src="images/hero-siv.mp4" type="video/mp4">
         </video>
@@ -1359,7 +1361,7 @@
                     <span style="height:32px;animation-delay:0.15s"></span>
                 </div>
                 <div class="podcast-controls">
-                    <button class="podcast-play">&#9654;</button>
+                    <button type="button" class="podcast-play">&#9654;</button>
                     <div class="podcast-progress"><div class="podcast-progress-fill"></div></div>
                     <span class="podcast-time">15:42 / 45:00</span>
                 </div>
@@ -1428,7 +1430,7 @@
                     </div>
                     <div class="maend-feature">
                         <div class="maend-feature-icon">&#129495;</div>
-                        <h4>Yoga & meditation</h4>
+                        <h4>Yoga &amp; meditation</h4>
                         <p>Daglige sessioner der forbinder krop og sind</p>
                     </div>
                     <div class="maend-feature">
@@ -1508,7 +1510,7 @@
                 <p>Lai Yde — skuespiller, foredragsholder og erhvervskonsulent. Hjælper ledere med at finde deres autentiske stemme siden 2002.</p>
             </div>
             <div class="footer-col">
-                <h4>Ydelser</h4>
+                <h3>Ydelser</h3>
                 <a href="#ydelser">Foredrag</a>
                 <a href="#ydelser">Lederudvikling</a>
                 <a href="#ydelser">Teamudvikling</a>
@@ -1516,7 +1518,7 @@
                 <a href="#podcast">Podcast</a>
             </div>
             <div class="footer-col">
-                <h4>Udforsk</h4>
+                <h3>Udforsk</h3>
                 <a href="integral.html">Integral Teori</a>
                 <a href="agersoe.html">Agersø</a>
                 <a href="blog.html">Blog</a>
@@ -1525,7 +1527,7 @@
                 <a href="faellesskab.html">Bliv en del</a>
             </div>
             <div class="footer-col">
-                <h4>Kontakt</h4>
+                <h3>Kontakt</h3>
                 <a href="mailto:lai@humandirection.dk">lai@humandirection.dk</a>
                 <a href="https://www.linkedin.com/in/laiyde/" target="_blank">LinkedIn</a>
                 <a href="https://humandirection.dk" target="_blank">Human Direction</a>

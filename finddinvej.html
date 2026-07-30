@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -599,7 +599,7 @@
 <!-- Navigation -->
 <nav>
     <div class="nav-container">
-        <a href="index.html" class="nav-logo has-svg"><span class="nav-logo-text">Vend<span>Hjem</span></span><svg class="nav-logo-svg" viewBox="0 0 155 30" width="155" height="30" xmlns="http://www.w3.org/2000/svg" aria-label="VendHjem"><text y="24"><tspan class="logo-vend">Vend</tspan><tspan class="logo-hjem">Hjem</tspan></text></svg></a>
+        <a href="index.html" class="nav-logo has-svg"><span class="nav-logo-text">Vend<span>Hjem</span></span><svg class="nav-logo-svg" viewBox="0 0 155 30" width="155" height="30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VendHjem"><text y="24"><tspan class="logo-vend">Vend</tspan><tspan class="logo-hjem">Hjem</tspan></text></svg></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html#om">Om Lai</a></li>
             <li><a href="index.html#ydelser">Ydelser</a></li>
@@ -609,7 +609,7 @@
             <li><a href="index.html#videoer">Videoer</a></li>
             <li><a href="faellesskab.html" class="nav-cta">Bliv en del</a></li>
         </ul>
-        <button class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <button type="button" class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
             <span></span><span></span><span></span>
         </button>
     </div>
@@ -625,7 +625,7 @@
                     <h1>Find Din Vej</h1>
                     <p>Jeg tilbyder flere måder at arbejde sammen på — foredrag, coaching, retreats og fællesskab. Denne korte guide hjælper dig med at opdage, hvad der passer til dig lige nu.</p>
                     <p>Der er ingen rigtig eller forkert svar. Svar ud fra hvad der minder dig mest om dig selv.</p>
-                    <button class="btn btn-primary" onclick="startQuiz()">Start guiden</button>
+                    <button type="button" class="btn btn-primary" onclick="startQuiz()">Start guiden</button>
                 </div>
             </div>
 
@@ -639,6 +639,7 @@
                 </div>
 
                 <div class="quiz-content" id="quizContent">
+                    <!-- [html-validate-disable-next empty-heading: udfyldes af quiz-JS] -->
                     <h2 class="quiz-title" id="questionTitle"></h2>
                     <div class="options" id="optionsContainer"></div>
                 </div>
@@ -647,12 +648,13 @@
             <!-- Result Section -->
             <div id="resultWrapper" class="result-wrapper">
                 <div class="result-icon" id="resultIcon"></div>
+                <!-- [html-validate-disable-next empty-heading: udfyldes af quiz-JS] -->
                 <h2 class="result-title" id="resultTitle"></h2>
                 <div class="result-description" id="resultDescription"></div>
                 <a href="#" class="result-cta" id="resultCta">Dit næste skridt</a>
                 <p class="result-footer">Alle veje fører hjem — dette er blot et forslag til dit første skridt.</p>
                 <div class="button-group">
-                    <button class="btn btn-secondary" onclick="restartQuiz()">Prøv igen</button>
+                    <button type="button" class="btn btn-secondary" onclick="restartQuiz()">Prøv igen</button>
                     <a href="faellesskab.html" class="btn btn-primary">Bliv en del af fællesskabet</a>
                 </div>
             </div>
@@ -682,7 +684,7 @@
             <ul>
                 <li><a href="index.html#om">Om Lai</a></li>
                 <li><a href="integral.html">Integral Teori</a></li>
-                <li><a href="agersoe.html">Agersø & Permakultur</a></li>
+                <li><a href="agersoe.html">Agersø &amp; Permakultur</a></li>
                 <li><a href="index.html#metode">Min Metode</a></li>
             </ul>
         </div>

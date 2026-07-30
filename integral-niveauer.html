@@ -8,7 +8,7 @@
     <meta name="description" content="Bevidsthedens niveauer i Ken Wilbers Integral Teori — fra arkaisk til integral bevidsthed. Artikler og øvelser til selvudvikling.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
     <style>
         :root {
             --color-bg: #F4F5EF;
@@ -224,7 +224,7 @@
 
 <nav>
     <div class="container">
-        <a href="index.html" class="nav-logo has-svg"><span class="nav-logo-text">Vend<span>Hjem</span></span><svg class="nav-logo-svg" viewBox="0 0 155 30" width="155" height="30" xmlns="http://www.w3.org/2000/svg" aria-label="VendHjem"><text y="24"><tspan class="logo-vend">Vend</tspan><tspan class="logo-hjem">Hjem</tspan></text></svg></a>
+        <a href="index.html" class="nav-logo has-svg"><span class="nav-logo-text">Vend<span>Hjem</span></span><svg class="nav-logo-svg" viewBox="0 0 155 30" width="155" height="30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VendHjem"><text y="24"><tspan class="logo-vend">Vend</tspan><tspan class="logo-hjem">Hjem</tspan></text></svg></a>
         <div class="nav-links" id="navLinks">
             <a href="index.html">Forside</a>
             <a href="integral.html" class="active">Integral Teori</a>
@@ -234,7 +234,7 @@
             <a href="finddinvej.html">Find din vej</a>
             <a href="faellesskab.html" class="nav-cta">Bliv en del</a>
         </div>
-        <button class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+        <button type="button" class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
     </div>
 </nav>
 
@@ -394,7 +394,7 @@
             const target = document.querySelector(a.getAttribute('href'));
             if (target) { const headerOffset = 76;
                 const elementPosition = target.getBoundingClientRect().top + window.scrollY;
-                window.scrollTo({ top: elementPosition - headerOffset, behavior: 'smooth' });); }
+                window.scrollTo({ top: elementPosition - headerOffset, behavior: 'smooth' }); }
         });
     });
 </script>
