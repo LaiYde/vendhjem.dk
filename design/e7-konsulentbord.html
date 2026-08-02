@@ -97,6 +97,20 @@
   .hegn{font-size:11px;color:#778782;background:var(--birk);border-radius:8px;padding:10px 12px;margin-top:12px}
 .rev-titel{font-size:.9rem;font-weight:600;color:var(--gran)}.mt22{margin-top:22px}.evi-id{font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:10px}.fw4{font-weight:400}
 .m1note{font-size:10px;color:#778782}
+  /* instrumentprofil */
+  .bd{margin-bottom:14px}
+  .bd:last-child{margin-bottom:0}
+  .bd-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+  .bd-navn{font-weight:600;font-size:12.5px;color:var(--gran)}
+  .bd-dom{font-size:11px;color:#778782}
+  .spor{position:relative;height:10px;border-radius:999px;background:linear-gradient(90deg,#E7ECEA 0%,#E7ECEA 45%,#F0EAD9 45%,#F0EAD9 55%,#E7ECEA 55%,#E7ECEA 100%)}
+  .interval{position:absolute;top:0;height:10px;border-radius:999px;background:rgba(83,124,126,.4)}
+  .prik{position:absolute;top:-3px;width:15px;height:15px;border-radius:50%;background:#fff;border:2.5px solid var(--gran);transform:translateX(-8px)}
+  .bd-laes{display:flex;justify-content:space-between;font-size:10px;color:#8FA39E;margin-top:4px}
+  .bd-tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:10px;font-weight:600;margin-left:6px}
+  .t-klar{background:#E0EBE2;color:#2F5E3C}
+  .t-midt{background:#EFE4CE;color:#7A5A18}
+  .kv-note{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#778782;margin-top:10px;padding-top:10px;border-top:1px dashed #E7ECEA}
 </style>
 </head>
 <body>
@@ -180,6 +194,29 @@
     </div>
 
     <div class="sektion">
+      <div class="s-head">Instrumentprofil <span class="h-note">låst indtil din blinde vurdering var afgivet · position er ikke målesikkerhed</span></div>
+      <div class="s-krop">
+        <div class="bd">
+          <div class="bd-top"><span class="bd-navn">Ordenssans <span class="bd-tag t-klar">tydelig</span></span><span class="bd-dom">Samvittighedsfuldhed</span></div>
+          <div class="spor"><span class="interval" style="left:64%;width:18%"></span><span class="prik" style="left:73%"></span></div>
+          <div class="bd-laes"><span>mindre struktur</span><span>mere struktur</span></div>
+        </div>
+        <div class="bd">
+          <div class="bd-top"><span class="bd-navn">Selskabelighed <span class="bd-tag t-midt">ikke entydig — samtalepunkt</span></span><span class="bd-dom">Udadvendthed</span></div>
+          <div class="spor"><span class="interval" style="left:39%;width:22%"></span><span class="prik" style="left:50%"></span></div>
+          <div class="bd-laes"><span>få og tætte</span><span>mange og brede</span></div>
+        </div>
+        <div class="bd">
+          <div class="bd-top"><span class="bd-navn">Bekymring <span class="bd-tag t-klar">tydelig</span></span><span class="bd-dom">Følelsesliv</span></div>
+          <div class="spor"><span class="interval" style="left:58%;width:20%"></span><span class="prik" style="left:68%"></span></div>
+          <div class="bd-laes"><span>uanfægtet</span><span>følsom</span></div>
+        </div>
+        <div class="kv-note">målt 9 dage efter forløbsstart — belastet periode, gentestning tilbydes · bredt spillerum = svagere skala · din blinde vurdering afveg på Selskabelighed › sammenhold</div>
+        <div class="kv-note" style="border-top:none;padding-top:0">rammevilkår: opsigelse 4-6 mdr · omvej muligt op til et år · pendling fint — former horisonten, lukker aldrig døre</div>
+      </div>
+    </div>
+
+    <div class="sektion">
       <div class="s-head">Udkast v1 → v2 · diff <span class="h-note">v0 er urørlig · hver ændring er sporet</span></div>
       <div class="s-krop">
         <div class="diff">
@@ -213,7 +250,7 @@
     <div class="b-note">Godkend kræver din attestation — hvert punkt er en aktiv handling. Intet er sat på forhånd.</div>
 
     <div class="att valgt"><div class="boks">✓</div><div>Jeg har læst hele profilen, før jeg så udkastet <span class="mono m1note">(M1 · låst rækkefølge)</span></div></div>
-    <div class="att valgt"><div class="boks">✓</div><div>Min blinde vurdering er afgivet — og afveg på ét punkt › vis</div></div>
+    <div class="att valgt"><div class="boks">✓</div><div>Min blinde vurdering er afgivet før instrumentprofilen blev vist — og afveg på ét punkt › vis</div></div>
     <div class="att"><div class="boks"></div><div>Hvert udsagn i udkastet kan følges til sin evidens</div></div>
     <div class="att"><div class="boks"></div><div>Intet i udkastet siger mere, end mennesket selv har valgt</div></div>
 
