@@ -34,6 +34,7 @@
   .gknap{text-align:left;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:var(--birk);border-radius:12px;padding:14px 16px;font:inherit;cursor:pointer;transition:all .2s}
   .gknap:hover{border-color:var(--taage)}
   .gknap[aria-pressed="true"]{border-color:var(--lygte);box-shadow:0 0 0 3px var(--lygte-glow);background:rgba(255,255,255,.09)}
+  .gknap span{display:block}
   .gk-n{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lygte);margin-bottom:4px}
   .gk-t{font-size:.92rem;font-family:'Source Serif 4',serif;font-style:italic;color:#E8DCC3}
   .gk-m{font-size:.74rem;color:#9FB2AD;margin-top:6px;font-family:'IBM Plex Mono',monospace}
@@ -95,9 +96,9 @@
     <div class="personer" id="personer"></div>
     <div class="vlabel">Hvor langt skal vi kigge?</div>
     <div class="grader" id="grader">
-      <button class="gknap" data-g="naert"><div class="gk-n">Nært</div><div class="gk-t">»Tæt på det jeg kommer fra«</div><div class="gk-m">5 fra svarene</div></button>
-      <button class="gknap" data-g="blandet"><div class="gk-n">Blandet &middot; standard</div><div class="gk-t">»Både det nære og noget nyt«</div><div class="gk-m">3 svar &middot; 1 andet spor &middot; 1 eget</div></button>
-      <button class="gknap" data-g="vidt"><div class="gk-n">Vidt</div><div class="gk-t">»Vis mig også det, jeg ikke selv ville tænke på«</div><div class="gk-m">2 svar &middot; 1 andet spor &middot; 2 egne</div></button>
+      <button type="button" class="gknap" data-g="naert"><span class="gk-n">Nært</span><span class="gk-t">»Tæt på det jeg kommer fra«</span><span class="gk-m">5 fra svarene</span></button>
+      <button type="button" class="gknap" data-g="blandet"><span class="gk-n">Blandet &middot; standard</span><span class="gk-t">»Både det nære og noget nyt«</span><span class="gk-m">3 svar &middot; 1 andet spor &middot; 1 eget</span></button>
+      <button type="button" class="gknap" data-g="vidt"><span class="gk-n">Vidt</span><span class="gk-t">»Vis mig også det, jeg ikke selv ville tænke på«</span><span class="gk-m">2 svar &middot; 1 andet spor &middot; 2 egne</span></button>
     </div>
   </div>
 
@@ -133,7 +134,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":
 
 function tegnPersoner(){
   document.getElementById("personer").innerHTML = DATA.map(p =>
-    `<button class="pknap" data-p="${p.id}" aria-pressed="${p.id===valgtP}">${esc(p.navn.split(",")[0])}</button>`).join("");
+    `<button type="button" class="pknap" data-p="${p.id}" aria-pressed="${p.id===valgtP}">${esc(p.navn.split(",")[0])}</button>`).join("");
 }
 function tegnGrader(){
   document.querySelectorAll(".gknap").forEach(b => b.setAttribute("aria-pressed", b.dataset.g===valgtG));
